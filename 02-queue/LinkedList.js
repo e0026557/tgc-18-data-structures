@@ -34,8 +34,12 @@ class LinkedList {
 
   insertAt(index, newNode) {
     // If linked list is empty, return since cannot insert into empty linked list
-    if (this.head == null) {
-      return;
+    if (this.head == null && index == 0) {
+      this.head = newNode;
+    }
+    else if (index == 0) {
+      newNode.setNext(this.head);
+      this.head = newNode;
     }
     else {
       let current = this.head;
@@ -59,7 +63,7 @@ class LinkedList {
       if (index == 0) {
         this.head = this.head.getNext(); // Set the new head to be the second node
       }
-      else{
+      else {
         // Case 2: If index is not 0 (not deleting the head)
         // Set current to point to node before the index of the node that we want to delete
         let current = this.head;
