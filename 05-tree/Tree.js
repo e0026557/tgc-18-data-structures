@@ -58,6 +58,20 @@ class BinaryTree {
       this.recursiveAdd(this.rootNode, targetValue);
     }
   }
+
+  sum() {
+    return this.recursiveSum(this.rootNode);
+  }
+
+  recursiveSum(rootNode) {
+    if (rootNode == null) {
+      return 0;
+    }
+
+    const leftSum = this.recursiveSum(rootNode.left);
+    const rightSum = this.recursiveSum(rootNode.right);
+    return rootNode.value + leftSum + rightSum;
+  }
 }
 
 module.exports = {
