@@ -16,6 +16,7 @@ class BinaryTree {
     return this.recursiveFind(this.rootNode, targetValue);
   }
 
+  // pre-order traversal
   recursiveFind(rootNode, targetValue) {
     if (!rootNode) {
       return false; // not found
