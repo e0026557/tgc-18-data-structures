@@ -32,6 +32,31 @@ class BinaryTree {
       return this.recursiveFind(rootNode.right, targetValue);
     }
   }
+
+  recursiveAdd(rootNode, targetValue) {
+    if (!rootNode) {
+      return new BinaryTreeNode(targetValue);
+    }
+
+    if (targetValue < rootNode.value) {
+      rootNode.left = this.recursiveAdd(rootNode.left, targetValue);
+    }
+
+    if (targetValue > rootNode.value) {
+      rootNode.right = this.recursiveAdd(rootNode.right, targetValue);
+    }
+
+    return rootNode;
+  }
+
+  add(targetValue) {
+    if (!this.rootNode) {
+      this.rootNode = new BinaryTreeNode(targetValue);
+    }
+    else {
+      this.recursiveAdd(this.rootNode, targetValue);
+    }
+  }
 }
 
 module.exports = {

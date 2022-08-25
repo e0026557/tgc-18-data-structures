@@ -7,12 +7,18 @@ const n4 = new BinaryTreeNode(20);
 const n5 = new BinaryTreeNode(91);
 const n6 = new BinaryTreeNode(71);
 
-n1.left = n2;
-n2.left = n3;
-n2.right = n4;
-n1.right = n5;
-n5.left = n6;
+// n1.left = n2;
+// n2.left = n3;
+// n2.right = n4;
+// n1.right = n5;
+// n5.left = n6;
 
-const tree = new BinaryTree(n1);
+const tree = new BinaryTree();
+tree.add(25);
+tree.add(15);
+tree.add(7)
+tree.add(20)
+tree.add(91)
+tree.add(71)
 
 console.log(tree.find(100));
